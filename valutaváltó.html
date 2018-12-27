@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta name="Valuta átváltó" content="Forint Euró Dollár">
+	<meta charset="utf-8">
+  <style>
+    *{
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<h1>Forint átváltó</h1>
+<script type="text/javascript">
+function hufeur(){
+var szam1=parseInt(document.getElementById("ertek1").value);
+var eredmeny="";
+  if (isNaN(szam1) || szam1<0){
+    eredmeny="HIBA!!! Nem adtál meg értéket.";
+    }
+  else{
+    eredmeny=Math.round(szam1/324);
+  }
+  document.getElementById("valasz").innerHTML = eredmeny;
+}
+function hufusd(){
+var szam1=parseInt(document.getElementById("ertek1").value);
+var eredmeny="";
+  if (isNaN(szam1) || szam1<0){
+    eredmeny="HIBA!!! Nem adtál meg értéket.";
+    }
+  else{
+    eredmeny=Math.round(szam1/287);
+  }
+  document.getElementById("valasz").innerHTML = eredmeny;
+}
+function eurhuf(){
+var szam1=parseInt(document.getElementById("ertek1").value);
+var eredmeny="";
+  if (isNaN(szam1) || szam1<0){
+    eredmeny="HIBA!!! Nem adtál meg értéket.";
+    }
+  else{
+    eredmeny=Math.round(szam1*324);
+  }
+  document.getElementById("valasz").innerHTML = eredmeny;
+}
+function usdhuf(){
+var szam1=parseInt(document.getElementById("ertek1").value);
+var eredmeny="";
+  if (isNaN(szam1) || szam1<0){
+    eredmeny="HIBA!!! Nem adtál meg értéket.";
+    }
+  else{
+    eredmeny=Math.round(szam1*287);
+  }
+  document.getElementById("valasz").innerHTML = eredmeny;
+}
+</script>
+<fieldset>
+<label> Adja meg az átváltani kívánt összeget:
+  <input type="number" id="ertek1"> 
+</label>
+  <br>
+    <label>HUF->EUR 
+<input type="radio" onclick="hufeur()"  name="pénznem" id="pénz">
+</label>
+<label>HUF->USD
+  <input type="radio" onclick="hufusd()" name="pénznem" id="pénz" >
+  </label>
+  <label>EUR->HUF
+  <input type="radio" onclick="eurhuf()" name="pénznem" id="pénz" >
+  </label>
+    <label>USD->HUF
+  <input type="radio" onclick="usdhuf()" name="pénznem" id="pénz" >
+  </label>
+  <br>
+<p id="valasz"></p>
+</fieldset>
+</body>
+</html>
